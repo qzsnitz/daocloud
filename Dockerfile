@@ -28,7 +28,7 @@ RUN a2enmod rewrite
 RUN mkdir -p /app && mkdir -p /app/html && mkdir -p /app/mysql
 RUN git clone https://github.com/fermayo/hello-world-lamp.git /app/html
 # Remove pre-installed database
-RUN rm -rf /var/lib/mysql ln -s /app/mysql /var/lib/mysql
+RUN rm -rf /var/lib/mysql && ln -s /app/mysql /var/lib/mysql
 RUN rm -fr /var/www/html && ln -s /app/html /var/www/html
 
 #Environment variables to configure php
